@@ -1,7 +1,9 @@
-
+import java.nio.DoubleBuffer;
+import java.util.Scanner;
 public class Sismos {
-    import java.util.Scanner;
+
     public static void main(String[] args) {
+
         Menu();
 
 
@@ -76,20 +78,18 @@ public class Sismos {
     }
 
     private static void Menu(){
-        System.out.println("1. Ingresar datos");
-        System.out.println("2. Mostrar sismo de mayor magnitud");
-        System.out.println("3. Contar sismos mayores o iguales a 5.0");
-        System.out.println("4. Enviar SMS por cada sismo mayor o igual a 7.0");
-        System.out.println("5.  Salir (S/N)");
-
-
-
+        Double matrix [][]=llenarMatriz();
+        mostrarMatriz(matrix);
+        System.out.println("el sismo de mayor valor es " + buscarMayor(matrix));
+        System.out.println("hay "+ContarSismos(matrix)+" sismos mayores a 5.0");
+        EnviarSms(ContarSms(matrix));
+        System.out.println("No se pudo realizar el menú en el tiempo estimado");
     }
-    private static int Metodos (int x){
-        if (x=1){
-            Double matrix [][]=llenarMatriz();
 
-        }
 
-    }
+
+
 }
+
+
+
